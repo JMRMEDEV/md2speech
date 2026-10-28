@@ -58,14 +58,14 @@ def test_defaults_can_be_disabled():
 
 def test_user_yaml_overrides_defaults(tmp_path):
     f = tmp_path / "pron.yaml"
-    # Override the built-in UX mapping and add a new term.
-    f.write_text("replacements:\n  UX: user experience\n  ACME: eigh pee eye\n",
+    # Override the built-in UX mapping and add a new custom term.
+    f.write_text("replacements:\n  UX: user experience\n  ACME: ackme\n",
                  encoding="utf-8")
     p = Pronunciation.load(Config(pronunciation_path=f))
     out = p.apply("ACME cares about UX and QA.")
     assert "user experience" in out      # user override wins
     assert "you ex" not in out           # default replaced
-    assert "eigh pee eye" in out              # user addition (kept as given)
+    assert "ackme" in out                # user addition (kept as given)
     assert "cue eigh" in out             # default QA still present (phonetic)
 
 

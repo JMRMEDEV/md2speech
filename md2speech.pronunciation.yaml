@@ -15,10 +15,10 @@
 # Disable the built-ins entirely with:  --no-default-pronunciation
 
 replacements:
-  # Project / client specific terms (not in the built-in dictionary)
-  ACME: "eigh pee eye"
-  Contentstack: "content stack"
-  Okta: "ock ta"
+  # Project / custom terms (not in the built-in dictionary)
+  ACME: "ackme"
+  Kubernetes: "koober netties"
+  Postgres: "post gres"
 
   # Example override of a built-in (uncomment to say the words instead)
   # UX: "user experience"

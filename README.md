@@ -157,8 +157,8 @@ or client names) or to **override** how a built-in term is spoken:
 ```yaml
 # md2speech.pronunciation.yaml
 replacements:
-  ACME: "eigh pee eye"          # add a term
-  Contentstack: "content stack"
+  ACME: "ackme"            # add a custom term
+  Kubernetes: "koober netties"
   UX: "user experience"    # override a built-in (say the words instead)
 ```
 
