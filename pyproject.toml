@@ -1,0 +1,34 @@
+[project]
+name = "md2speech"
+version = "0.1.0"
+description = "Convert Markdown study materials into natural-sounding audio via the kokoro-tts CLI."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "md2speech" }]
+keywords = ["markdown", "tts", "text-to-speech", "kokoro", "study", "audio"]
+
+dependencies = [
+    "markdown-it-py>=3.0.0",
+    "PyYAML>=6.0",
+    "click>=8.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[project.scripts]
+md2speech = "md2speech.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/md2speech"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
