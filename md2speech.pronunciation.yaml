@@ -1,0 +1,25 @@
+# Custom pronunciation overrides for md2speech.
+#
+# md2speech ALREADY ships a built-in tech-friendly dictionary (UX -> "you ex",
+# QA -> "Q A", API -> "A P I", OIDC, PKCE, CI/CD, etc.) that is applied by
+# default. You only need this file to:
+#   * add terms the built-ins don't cover (project names, client acronyms), or
+#   * override how a built-in term is spoken.
+#
+# Keys are matched whole-word and case-insensitively; longer terms take
+# precedence over shorter ones. User entries here override the built-ins.
+#
+# Usage:
+#   md2speech notes.md --pronunciation md2speech.pronunciation.yaml
+#
+# Disable the built-ins entirely with:  --no-default-pronunciation
+
+replacements:
+  # Project / client specific terms (not in the built-in dictionary)
+  ACME: "eigh pee eye"
+  Contentstack: "content stack"
+  Okta: "ock ta"
+
+  # Example override of a built-in (uncomment to say the words instead)
+  # UX: "user experience"
+  # QA: "quality assurance"
