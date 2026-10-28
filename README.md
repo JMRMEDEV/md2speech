@@ -22,7 +22,7 @@ text:
 - Fenced code blocks are **skipped by default** (includable with a flag).
 - **ASCII-art diagrams** inside code fences are announced as "Diagram omitted" rather than read as garbage.
 - Image paths/URLs are skipped.
-- **Technical normalization:** file extensions (`.js` → "dot jay ess"), plural initialisms (`APIs` → "A P Iz"), and operators (`===` → "triple equals", `=>` → "arrow", `??` → "nullish coalescing") are spoken sensibly.
+- **Technical normalization:** file extensions (`.js` → "dot jay ess"), plural initialisms (`APIs` → "eigh pee eyes"), and operators (`===` → "triple equals", `=>` → "arrow", `??` → "nullish coalescing") are spoken sensibly.
 - Pauses are inserted using **real audio silence** (via ffmpeg), not just punctuation.
 - Long content is split at **sentence/paragraph boundaries — never mid‑sentence**.
 - Chapter/section order is preserved. No paraphrasing or summarizing.
@@ -146,13 +146,15 @@ md2speech --list-voices
 
 md2speech ships a **built-in, tech-friendly pronunciation dictionary that is
 applied by default**, so common software acronyms are spoken the way an
-English-speaking engineer says them — e.g. `UX` → "you ex", `QA` → "Q A",
-`API` → "A P I", `CI/CD` → "C I C D", `OIDC` → "O I D C", `PKCE` → "pixy",
-`JWT` → "J W T". Without this, Kokoro tries to pronounce all-caps tokens as
-words and produces the wrong (often Spanish-sounding) vowels.
+English-speaking engineer says them. Initialisms are spelled phonetically
+letter by letter — e.g. `UX` → "you ex", `QA` → "cue eigh",
+`API` → "eigh pee eye", `CI/CD` → "see eye see dee", `OIDC` → "oh eye dee see",
+`PKCE` → "pixy", `JWT` → "jay double-you tee". Plurals read naturally too
+(`APIs` → "eigh pee eyes"). Without this, Kokoro tries to pronounce all-caps
+tokens as words and produces the wrong (often Spanish-sounding) vowels.
 
 You only need a YAML file to **add** terms the built-ins don't cover (project
-or client names) or to **override** how a built-in term is spoken:
+or product names) or to **override** how a built-in term is spoken:
 
 ```yaml
 # md2speech.pronunciation.yaml
